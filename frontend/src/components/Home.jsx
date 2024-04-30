@@ -39,14 +39,18 @@ const getPokemon = async () => {
         <>
         <Header/>
         <main>
-        <h2>MAIN POKEMONS</h2>
-        {pokemon?.slice(0,9).map((poke, index) => (
-            <h3 key={index}>{poke.name}</h3>
-        ))}         
-        <h2>TYPES</h2>
-        {type?.slice(0,18).map((type, index) => (
-            <h3 key={index}>{type.name}</h3>
-        ))}  
+            <section className="MainPokemons"> 
+            <h2>MAIN POKEMONS</h2>
+            {pokemon?.slice(0,9).map((poke, index) => (
+                <h3 key={index}>{poke.name}</h3>
+            ))}   
+        </section> 
+        <section className="Types">        
+            <h2>TYPES</h2>
+            {type?.slice(0,18).map((type, index) => (
+                <h3 key={index}>{type.name}</h3>
+            ))}  
+        </section> 
         </main>
       </>
     )
