@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import { SearchBar } from './components/SearchBar'
+import { SearchResults } from './components/SearchResult';
 
 function App() {
 
@@ -8,8 +9,8 @@ function App() {
   return (
       <div className="App">
         <section className="search-bar-container">
-          <SearchBar />
-          <h1>SearchResults</h1>
+          <SearchBar setResults={setResults}/>
+          <SearchResults results={results}/>
         </section>
       </div>
   )

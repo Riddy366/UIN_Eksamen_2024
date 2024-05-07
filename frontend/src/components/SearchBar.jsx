@@ -3,7 +3,7 @@ import "../styles/SearchBar.css";
 
 import {FaSearch} from "react-icons/fa";
 
-export const SearchBar = () => {
+export const SearchBar = ({ setResults }) => {
     const [input, setInput] = useState("");
     
     const fetchData = (value) => {
@@ -13,9 +13,13 @@ export const SearchBar = () => {
             const results = json.results.filter((user) => {
                 return value && user && user.name && user.name.toLowerCase().includes(value);
             });
-            console.log(results);
+            setResults(results);
         });
     }
+
+    //Hver gang input-en endres fetches data fra API'et og filtrerer det basert-
+    //på teksten og input-en for og så sette results variablen til det vi får tilbake.
+    
     //Kilder: 
     // https://www.youtube.com/watch?v=sWVgMcz8Q44 
     // https://www.guvi.in/blog/build-a-search-filter-component-in-react/
