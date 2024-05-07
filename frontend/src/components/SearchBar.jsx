@@ -7,12 +7,15 @@ export const SearchBar = () => {
     const [input, setInput] = useState("");
     
     const fetchData = (value) => {
-        fetch("https://jsonplaceholder.typicode.com/users")
+        fetch("https://pokeapi.co/api/v2/")
         .then((response) => response.json())
         .then(json => {
             console.log(json);
         });
     }
+    //Kilder: 
+    // https://www.youtube.com/watch?v=sWVgMcz8Q44 
+    // https://www.guvi.in/blog/build-a-search-filter-component-in-react/
 
     const handleChange = (value) => {
         setInput(value);
@@ -21,11 +24,11 @@ export const SearchBar = () => {
     
     return (
     <div className="input-wrapper">
-        <FaSearch id="search-icon" />
-        <input placeholder="Skrive for å søke..." 
+        <input placeholder="Søk etter pokemon" 
         value={input} 
         onChange={(e) => handleChange(e.target.value)}
         />
+        <FaSearch id="search-icon" />
     </div>
     );
 };
