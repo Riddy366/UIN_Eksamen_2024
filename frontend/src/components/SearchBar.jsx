@@ -7,10 +7,13 @@ export const SearchBar = () => {
     const [input, setInput] = useState("");
     
     const fetchData = (value) => {
-        fetch("https://pokeapi.co/api/v2/")
+        fetch("https://pokeapi.co/api/v2/pokemon?limit=1302")
         .then((response) => response.json())
         .then(json => {
-            console.log(json);
+            const results = json.results.filter((user) => {
+                return value && user && user.name && user.name.toLowerCase().includes(value);
+            });
+            console.log(results);
         });
     }
     //Kilder: 
