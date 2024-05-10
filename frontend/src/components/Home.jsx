@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import Header from "./Header"
+import "../styles/Home.css";
 export default function Home(){
 
 const API_URL = 'https://pokeapi.co/api/v2/'

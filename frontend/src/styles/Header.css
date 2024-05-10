@@ -1,0 +1,12 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+menu {
+    display: flex;
+    padding: 0;
+}
+menu h3{
+    width: 10rem;
+}

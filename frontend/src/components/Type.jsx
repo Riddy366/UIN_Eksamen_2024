@@ -15,12 +15,6 @@ const Type = () => {
 
     return (
         <div className="container">
-            <div className="menu">
-                <ul>
-                    <li><a href="#">UIN POKEDEX</a></li>
-                    <li><a href="#">TEAMS</a></li>
-                </ul>
-            </div>
             <div className="content">
                 <h1 className="title">Normal</h1>
                 <div className="pokemonList">
