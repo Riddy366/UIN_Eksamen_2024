@@ -1,6 +1,5 @@
 import React from 'react';
 import '../style/Type.css';
-import '../components/Searchresult.jsx';
 
 
 
