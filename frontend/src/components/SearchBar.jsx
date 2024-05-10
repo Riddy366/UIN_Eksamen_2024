@@ -1,8 +1,6 @@
 import React, {useState} from "react";
 import "../styles/SearchBar.css";
 
-import {FaSearch} from "react-icons/fa";
-
 export const SearchBar = () => {
     const [input, setInput] = useState("");
     
@@ -28,7 +26,6 @@ export const SearchBar = () => {
         value={input} 
         onChange={(e) => handleChange(e.target.value)}
         />
-        <FaSearch id="search-icon" />
     </div>
     );
 };
