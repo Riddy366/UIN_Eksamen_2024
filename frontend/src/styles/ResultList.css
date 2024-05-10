@@ -1,0 +1,7 @@
+.result-list {
+    padding: 10px 20px;
+}
+
+.result-list:hover {
+    background-color: #efefef;
+}
