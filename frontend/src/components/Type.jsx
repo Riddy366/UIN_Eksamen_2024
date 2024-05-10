@@ -2,6 +2,8 @@ import React from 'react';
 import '../style/Type.css';
 import '../components/Searchresult.jsx';
 
+
+
 const Type = () => {
     const pokemons = [
         "Pidgey", "Pidgeotto", "Pidgeot", "Rattata", "Raticate",
