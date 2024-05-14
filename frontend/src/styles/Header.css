@@ -9,4 +9,6 @@ menu {
 }
 menu h3{
     width: 10rem;
+    text-decoration: none;
+    color: black;
 }

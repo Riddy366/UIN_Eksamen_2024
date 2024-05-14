@@ -1,16 +1,21 @@
 
 import Home from './components/Home'
+import Type from './components/Type'
+import Teams from './components/Teams'
 import './App.css'
 import React from 'react'
-import Type from './components/Type'
+import { Route, Routes } from 'react-router-dom'
 
 
 function App() {
 
   return (
     <>
-        <Home/>
-        <Type/>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="type" element={<Type/>} />
+          <Route path="teams" element={<Teams/>} />
+        </Routes>
     </>
   )
 }

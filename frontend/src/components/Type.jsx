@@ -1,5 +1,6 @@
 import React from 'react';
 import '../style/Type.css';
+import Header from './Header';
 
 
 
@@ -15,6 +16,7 @@ const Type = () => {
 
     return (
         <div className="container">
+            <Header />
             <div className="content">
                 <h1 className="title">Normal</h1>
                 <div className="pokemonList">
