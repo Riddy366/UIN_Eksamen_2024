@@ -1,57 +1,28 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import '../style/Type.css'
+import { Link } from 'react-router-dom';
 
-
-export default function Type({
-    pokemonNames = [
-        "Pidgey", "Pidgeotto", "Pidgeot", "Rattata", "Raticate",
-        "Spearow", "Fearow", "Jigglypuff", "Wigglytuff", "Meowth",
-        "Persian", "Farfetch'd", "Doduo", "Dodrio", "Lickitung",
-        "Chansey", "Kangaskhan", "Tauros", "Ditto", "Eevee"
-    ]
-}) {
-    const { typeName } = useParams();
-    const [typeDetails, setTypeDetails] = useState(null)
-
+export default function TypesList() {
+    const [types, setTypes] = useState([]);
+//Henter pokemon apiene
     useEffect(() => {
-        if (typeName) {
-            console.log(`Fetching details for type: ${typeName}`);
-            fetch(`https://pokeapi.co/api/v2/type/${typeName}`)
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Data received:', data);
-                    setTypeDetails(data);
-                })
-                .catch(error => console.error('Error loading type details:', error));
-        }
-    }, [typeName]);
+        fetch('https://pokeapi.co/api/v2/type/')
+            .then(response => response.json())
+            .then(data => {
+                setTypes(data.results);
+            })
+            .catch(error => console.error('Error fetching types:', error));
+    }, []);
 
     return (
-        <div className="container">
-            <div className="menu">
-                <ul>
-                    <li><a href="#">UIN POKEDEX</a></li>
-                    <li><a href="#">TEAMS</a></li>
-                </ul>
-            </div>
-            <div className="content">
-                <h1 className="title">{typeName || "Normal"}</h1>
-                {typeDetails ? (
-                    <div>
-                        <h2>Type Details</h2>
-                        <p>{typeDetails.pokemon ? typeDetails.pokemon.map(p => p.pokemon.name).join(", ") : "No Pokemon Found"}</p>
-                    </div>
-                ) : (
-                    <div className="pokemonList">
-                        {pokemonNames.map(pokemon => (
-                            <div key={pokemon} className="pokemon">
-                                {pokemon}
-                            </div>
-                        ))}
-                    </div>
-                )}
-            </div>
+        <div className="types-container">
+            <h1>Pokémon Types</h1>
+            <ul>
+                {types.map(type => (
+                    <li key={type.name}>
+                        <Link to={`/types/${type.name}`}>{type.name.toUpperCase()}</Link>
+                    </li>
+                ))}
+            </ul>
         </div>
-    )
+    );
 }
