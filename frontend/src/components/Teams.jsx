@@ -4,6 +4,7 @@ export default function Teams(){
     return(
         <>
             <Header />
+            <h2>TEAMS</h2>
         </>
     )
 }
