@@ -14,7 +14,7 @@ function App() {
     <>
         <Routes>
           <Route index element={<Home />} />
-            <Route path="id" element={<Pokemon />} />
+            <Route path="pokemon/:pokemonName" element={<Pokemon />} />
           <Route path="type" element={<Type/>} />
           <Route path="teams" element={<Teams/>} />
         </Routes>

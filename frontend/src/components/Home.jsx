@@ -44,7 +44,9 @@ const getPokemon = async () => {
             <section className="MainPokemons"> 
             <h2>MAIN POKEMONS</h2>
             {pokemon?.slice(0,9).map((poke, index) => (
-                <h3 key={index}>{poke.name}</h3>
+                <Link key={index} to={`/pokemon/${poke.name}`}>
+                    <h3>{poke.name}</h3>
+                </Link>
             ))}   
         </section> 
         <section className="Types">        
