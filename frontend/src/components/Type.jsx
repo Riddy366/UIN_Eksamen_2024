@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import '../style/Type.css'; 
 
-export default function TypesList() {
+export default function Type() {
     const [types, setTypes] = useState([]);
 //Henter pokemon apiene
     useEffect(() => {
@@ -12,7 +13,7 @@ export default function TypesList() {
             })
             .catch(error => console.error('Error fetching types:', error));
     }, []);
-
+//Forsiden
     return (
         <div className="types-container">
             <h1>Pokémon Types</h1>

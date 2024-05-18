@@ -1,18 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Type from './components/Type';
+import TypeDetails from './components/Typedetails';
 
-const App = () => {
-  return (
-    <Router>
-      <div>
+//Lagde routing
+function App() {
+    return (
         <Routes>
-          <Route path="/" element={<Type />} />  
-          <Route path="/types/:typeName" element={<Type />} />  
+            <Route path="/types/:typeName" element={<TypeDetails />} />
+            <Route path="/" element={<Type />} />
         </Routes>
-      </div>
-    </Router>
-  );
+    );
 }
 
 export default App;
