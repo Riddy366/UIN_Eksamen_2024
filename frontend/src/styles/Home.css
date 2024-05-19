@@ -2,11 +2,16 @@
  font-size: 3rem;  
  text-decoration: none; 
 }
-
 .MainPokemons h3 {
     display: inline-block;
-    padding-right: 1.8rem;
+    padding: 1rem 3rem; /* Juster padding for å gjøre boksen tynnere */
     text-decoration: none;
+    border-radius: 7%;
+    background-color: #f8f9fa;
+    margin: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Legg til skygge */
+    color: black; /* Tekstfarge */
+    font-size: 1.5rem; /* Gjør teksten større */
 }
 
 .Types h2 {
