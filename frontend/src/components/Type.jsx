@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Header from "./Header";
 import "../style/Type.css";
+import { Link } from "react-router-dom";
 
 export default function Type() {
   const { type } = useParams()
@@ -23,14 +24,16 @@ export default function Type() {
   return (
     <>
       <Header />
-      <h1>{type.toUpperCase()} TYPE POKÉMON</h1>
-      <div className="pokemonList">
-        {pokemonType.map(pokemon => (
-          <div key={pokemon.name} className="pokemon">
-            {pokemon.name}
-          </div>
+      <h1>{type.toUpperCase()}</h1>
+      <section className="pokemonList">
+        {pokemonType.slice(0,20).map((poke, index) => (
+          <article key={poke.name} className="pokemon">
+            <Link key={index} to={`/Pokemons/${poke.name}`}>
+              <h3>{poke.name}</h3>
+            </Link>
+          </article>
         ))}
-      </div>
+      </section>
     </>
   )
 }

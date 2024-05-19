@@ -28,7 +28,7 @@ export default function Pokemon(){
     return(
         <>
         <Header />
-    <div>
+    
         <h2>{pokemonData.name}</h2>
         <img className="pokemonIMG" src={pokemonData.sprites.other.dream_world.front_default} alt={pokemonData.name} />
         <article className="stats">
@@ -56,7 +56,7 @@ export default function Pokemon(){
                 </ul>
         </article>
         
-    </div>
+    
         </>
     )
 }
