@@ -1,37 +1,31 @@
-import React from 'react';
-import '../style/Type.css';
-import Header from './Header';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import '../style/Type.css'; 
 
 
-
-const Type = () => {
-    const pokemons = [
-        "Pidgey", "Pidgeotto", "Pidgeot", "Rattata", "Raticate",
-        "Spearow", "Fearow", "Jigglypuff", "Wigglytuff", "Meowth",
-        "Persian", "Farfetch'd", "Doduo", "Dodrio", "Lickitung",
-        "Chansey", "Kangaskhan", "Tauros", "Ditto", "Eevee"
-    ];
-
-    console.log("Pokemons array:", pokemons);
-
+export default function Type() {
+    const [types, setTypes] = useState([]);
+//Henter pokemon apiene
+    useEffect(() => {
+        fetch('https://pokeapi.co/api/v2/type/')
+            .then(response => response.json())
+            .then(data => {
+                setTypes(data.results);
+            })
+            .catch(error => console.error('Error fetching types:', error));
+    }, []);
+//Forsiden
     return (
-        <div className="container">
-            <Header />
-            <div className="content">
-                <h1 className="title">Normal</h1>
-                <div className="pokemonList">
-                    {pokemons.map(pokemon => {
-                        console.log("Mapping pokemon:", pokemon);
-                        return (
-                            <div key={pokemon} className="pokemon">
-                                {pokemon}
-                            </div>
-                        );
-                    })}
-                </div>
-            </div>
+        <div className="types-container">
+            <h1>Pokémon Types</h1>
+            <ul>
+                {types.map(type => (
+                    <li key={type.name}>
+                        <Link to={`/types/${type.name}`}>{type.name.toUpperCase()}</Link>
+                    </li>
+                ))}
+            </ul>
+
         </div>
     );
-};
-
-export default Type;
+}
