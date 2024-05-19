@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom"
 import Header from "./Header"
 import { useEffect, useState } from "react"
+import "../styles/Pokemon.css";
 
 export default function Pokemon(){
 
@@ -29,27 +30,31 @@ export default function Pokemon(){
         <Header />
     <div>
         <h2>{pokemonData.name}</h2>
-        <img src={pokemonData.sprites.front_default} alt={pokemonData.name} />
-        <h2>{`TYPE(S)`}</h2>
-            <ul className="Types">
-                {pokemonData.types.map((type, index) => (
-                <li key={index}>{type.type.name}</li>
-                ))}
-            </ul>
-        <h2>STATS</h2>
-            <ul className="Stats">
-                {pokemonData.stats.map((stat, index) => (
-                <li key={index}>
-                    {stat.stat.name}: {stat.base_stat}
-                </li>
-                ))}
-            </ul>
-        <h2>Abilities</h2>
-            <ul className="Abilites">
-                {pokemonData.abilities.map((ability, index) => (
-                <li key={index}>{ability.ability.name}</li>
-                ))}
-            </ul>
+        <img className="pokemonIMG" src={pokemonData.sprites.other.dream_world.front_default} alt={pokemonData.name} />
+        <article className="stats">
+            <h2>{`TYPE(S)`}</h2>
+                <ul className="types">
+                    {pokemonData.types.map((type, index) => (
+                    <li key={index}>{type.type.name}</li>
+                    ))}
+                </ul>
+            <h2>STATS</h2>
+                <ul className="Stats">
+                    {pokemonData.stats.map((stat, index) => (
+                    <li key={index}>
+                        {stat.stat.name}: {stat.base_stat}
+                    </li>
+                    ))}
+                </ul>
+        </article>
+        <article className="abilities">
+            <h2>ABILITIES</h2>
+                <ul className="Abilites">
+                    {pokemonData.abilities.map((ability, index) => (
+                    <li key={index}>{ability.ability.name}</li>
+                    ))}
+                </ul>
+        </article>
         
     </div>
         </>

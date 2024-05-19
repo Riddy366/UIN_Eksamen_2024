@@ -1,0 +1,12 @@
+.pokemonIMG {
+    width: 25rem;
+    height: 25rem;
+}
+article.types{
+    width: 40%;
+    float: right;
+}
+article.stats{
+    width: 40%;
+    float: right;
+}

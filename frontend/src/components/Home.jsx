@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import Header from "./Header"
-import "../styles/Home.css";
-import { Link } from "react-router-dom";
+import "../styles/Home.css"
+import { Link } from "react-router-dom"
 export default function Home(){
 
 const API_URL = 'https://pokeapi.co/api/v2/'
@@ -50,9 +50,11 @@ const getPokemon = async () => {
             ))}   
         </section> 
         <section className="Types">        
-            <Link to="/type"><h2>TYPES</h2></Link>
+            <h2>TYPES</h2>
             {type?.slice(0,18).map((type, index) => (
-                <h3 key={index}>{type.name}</h3>
+                <Link key={index} to={`/${type.name}`}>
+                    <h3>{type.name}</h3>
+                </Link>
             ))}  
         </section> 
         </main>
