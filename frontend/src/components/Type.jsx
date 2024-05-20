@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import "../style/Type.css";
+import "../styles/Type.css";
 import { Link } from "react-router-dom";
 
 export default function Type() {
