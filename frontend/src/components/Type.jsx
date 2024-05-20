@@ -29,10 +29,10 @@ useEffect(() => {
             };
           })
         );
-        setPokemonType(detailedPokemon);
+        setPokemonType(detailedPokemon)
 
       } catch (error) {
-        console.error('Error fetching Pokemon by type:', error);
+        console.error('Error fetching Pokemon by type:', error)
       }
 
     }
