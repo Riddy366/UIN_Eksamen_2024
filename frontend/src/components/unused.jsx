@@ -22,9 +22,6 @@ export default function PokeCard() {
         fetchPokemonData()
     }, [pokemonName])
 
-    if (!pokemonData) {
-        return <div>Loading...</div>
-      }
     
     return (
 
