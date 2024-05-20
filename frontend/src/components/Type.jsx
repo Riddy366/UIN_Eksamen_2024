@@ -8,6 +8,12 @@ export default function Type() {
   const { type } = useParams()
   const [pokemonType, setPokemonType] = useState([])
 
+  const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  //https://codedamn.com/news/javascript/how-to-capitalize-first-letter-in-javascript
+
+
   useEffect(() => {
     const fetchPokemonType = async () => {
       try {
@@ -29,7 +35,7 @@ export default function Type() {
         {pokemonType.slice(0,20).map((poke, index) => (
           <article key={poke.name} className="pokemon">
             <Link key={index} to={`/Pokemons/${poke.name}`}>
-              <h3>{poke.name}</h3>
+              <h3>{capitalizeFirstLetter(poke.name)}</h3>
             </Link>
           </article>
         ))}

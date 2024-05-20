@@ -7,8 +7,12 @@ menu {
     display: flex;
     padding: 0;
 }
-menu h3{
+menu a {
     width: 10rem;
     text-decoration: none;
     color: black;
+}
+button {
+    width: 2.5rem;
+    height: 2.5rem;
 }
