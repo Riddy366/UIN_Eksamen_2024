@@ -12,6 +12,9 @@ export default function Type() {
   }
   //https://codedamn.com/news/javascript/how-to-capitalize-first-letter-in-javascript
 
+  //https://pokeapi.co/
+  //https://www.youtube.com/watch?v=o3ZUc7zH8BE
+  
 //Henter pokemon apiene, tok maks på 20 pokemons.
 useEffect(() => {
     const fetchPokemonType = async () => {
