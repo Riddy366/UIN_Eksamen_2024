@@ -53,7 +53,7 @@ const getPokemon = async () => {
                 </Link>
             ))}   
         </section>
-        <h2 className="typeh2">TYPES</h2> 
+        <h2 className="typeTitle">TYPES</h2> 
         <section className="Types">        
             {type?.slice(0,18).map((type, index) => (
                 <Link key={index} to={`/${type.name}`}>

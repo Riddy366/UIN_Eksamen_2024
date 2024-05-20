@@ -20,3 +20,48 @@ form{
     width: 1.2rem;
     padding-right: 20px;
 }
+@media (max-width: 1024px) {
+
+    form {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    input {
+        font-size: 1rem;
+    }
+
+    .searchIcon {
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    form {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    input {
+        font-size: 0.9rem;
+    }
+
+    .searchIcon {
+        padding-right: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    input {
+        font-size: 0.8rem;
+    }
+
+    .searchIcon {
+        padding-right: 5px;
+    }
+}

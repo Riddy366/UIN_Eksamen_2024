@@ -29,7 +29,7 @@ main h2 {
     width: 100%; 
     
 }
-.typeh2 {
+.typeTitle {
     font-size: 2.4rem;
 }
 
@@ -67,4 +67,66 @@ main h2 {
     text-decoration: none; 
     display: block; 
     margin-bottom: 10px; 
+}
+@media (max-width: 1024px) {
+    .MainPokemons {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    .Types {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    main h2 {
+        font-size: 2.5rem;
+    }
+
+    .typeh2 {
+        font-size: 2rem;
+    }
+
+    .MainPokemons h3, .Types h3 {
+        font-size: 1.2rem;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .MainPokemons {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .Types {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    main h2 {
+        font-size: 2rem;
+    }
+
+    .typeh2 {
+        font-size: 1.8rem;
+    }
+    .MainPokemons h3, .Types h3 {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .Types {
+        grid-template-columns: 1fr 1fr;
+    }
+    main h2 {
+        font-size: 1.5rem;
+    }
+
+    .typeh2 {
+        font-size: 1.4rem;
+    }
+    .MainPokemons h3, .Types h3 {
+        font-size: 0.8rem;
+        padding: 0.8rem;
+    }
 }
