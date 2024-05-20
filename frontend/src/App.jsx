@@ -10,12 +10,13 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import TypeDetails from './components/Typedetails';
 
+
 //Lagde routing
 function App() {
     return (
         <Routes>
           <Route index element={<Home />} />
-            <Route path="pokemons/:pokemonName" element={<Pokemon />} />
+            <Route path="pokemons/:pokemonName" element={<Pokemo />} />
             <Route path="/:type" element={<Type />} />
           <Route path="teams" element={<Teams/>} />
             <Route path="/types/:typeName" element={<TypeDetails />} />
