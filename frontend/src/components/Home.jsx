@@ -1,13 +1,18 @@
 import { useEffect, useState } from "react"
-import Header from "./Header"
-import "../styles/Home.css";
-import { Link } from "react-router-dom";
+import "../styles/Home.css"
+import { Link } from "react-router-dom"
 export default function Home(){
 
 const API_URL = 'https://pokeapi.co/api/v2/'
 
 const [pokemon, setPokemon] = useState([])
 const [type, setType] = useState([])
+
+const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  //https://codedamn.com/news/javascript/how-to-capitalize-first-letter-in-javascript
+
 
 const getPokemon = async () => {
     try{
@@ -39,18 +44,21 @@ const getPokemon = async () => {
 
     return(
         <>
-        <Header/>
         <main>
-            <section className="MainPokemons"> 
             <h2>MAIN POKEMONS</h2>
+            <section className="MainPokemons"> 
             {pokemon?.slice(0,9).map((poke, index) => (
-                <h3 key={index}>{poke.name}</h3>
+                <Link key={index} to={`/pokemons/${poke.name}`}>
+                    <h3>{capitalizeFirstLetter(poke.name)}</h3>
+                </Link>
             ))}   
-        </section> 
+        </section>
+        <h2 className="typeTitle">TYPES</h2> 
         <section className="Types">        
-            <Link to="/type"><h2>TYPES</h2></Link>
             {type?.slice(0,18).map((type, index) => (
-                <h3 key={index}>{type.name}</h3>
+                <Link key={index} to={`/${type.name}`}>
+                    <h3>{capitalizeFirstLetter(type.name)}</h3>
+                </Link>
             ))}  
         </section> 
         </main>
