@@ -5,23 +5,27 @@ input {
     font-size: 0.8rem;
     border: none;
     text-indent: 10px;
-}
-input:focus {
-    outline: none;
-}
-form{
-    display: flex;
-}
-.input-wrapper {
-    border: 1px solid grey;
-    flex: 1;
-}
-.searchIcon {
-    width: 1.2rem;
-    padding-right: 20px;
-}
-@media (max-width: 1024px) {
 
+    &:focus {
+        outline: none;
+    }
+}
+
+form {
+    display: flex;
+
+    .input-wrapper {
+        border: 1px solid grey;
+        flex: 1;
+    }
+
+    .searchIcon {
+        width: 1.2rem;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 1024px) {
     form {
         width: 100%;
         margin-top: 10px;

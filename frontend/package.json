@@ -13,8 +13,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.2.0",
-    "react-router-dom": "^6.23.1",
-    "sass": "^1.77.2"
+    "react-router-dom": "^6.23.1"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
@@ -27,6 +26,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
     "react-router-dom": "^6.23.1",
+    "sass": "^1.77.2",
     "vite": "^5.2.0"
   }
 }
