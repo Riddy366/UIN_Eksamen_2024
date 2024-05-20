@@ -16,7 +16,7 @@ function App() {
     return (
         <Routes>
           <Route index element={<Home />} />
-            <Route path="pokemons/:pokemonName" element={<Pokemo />} />
+            <Route path="pokemons/:pokemonName" element={<Pokemon />} />
             <Route path="/:type" element={<Type />} />
           <Route path="teams" element={<Teams/>} />
             <Route path="/types/:typeName" element={<TypeDetails />} />
