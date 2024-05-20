@@ -1,5 +1,3 @@
-
-
 import Home from './components/Home'
 import Type from './components/Type'
 import Teams from './components/Teams'
