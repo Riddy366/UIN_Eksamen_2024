@@ -1,23 +1,26 @@
-export const team = {
+export const teams = {
     title: "Teams",
     name: "teams",
-    type: "object",
+    type: "document",
     fields: [
         {
             title: "Pokemon Team",
-            name: "teams",
+            name: "teamName", 
             type: "string"
         },
         {
             title: "Pokemons",
             name: "pokemons",
-            type: "string"
+            type: "array", 
+            of: [{ type: "string" }]
         },
         {
-            title: "bilde",
+            title: "Bilde",
             name: "image",
-            type: "image"
+            type: "image",
+            options: {
+                hotspot: true 
+            }
         }
-        
     ]
 }

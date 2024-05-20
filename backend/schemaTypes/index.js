@@ -1,1 +1,3 @@
-export const schemaTypes = []
+import {teams} from "./teams.js";
+
+export const schemaTypes = [teams]
