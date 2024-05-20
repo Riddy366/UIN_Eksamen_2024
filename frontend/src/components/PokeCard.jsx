@@ -1,61 +1,40 @@
-import {useParams} from "react-router-dom"
-import React, { useEffect, useState } from 'react';
-import Header from './Header';
-import "../styles/Pokecard.css"
+import { useEffect, useState } from "react"
+import "../styles/Home.css"
+import { Link } from "react-router-dom"
+export default function PokeCard(){
+    const API_URL = 'https://pokeapi.co/api/v2/'
 
-// brukt https://github.com/PokeAPI/sprites# for å finne ut hvordan bildet skal displayes
-export default function PokeCard() {
+const [pokemon, setPokemon] = useState([])
 
-    let { pokemonName } = useParams()
-    let [pokemonData, setPokemonData] = useState(null)
+const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  //https://codedamn.com/news/javascript/how-to-capitalize-first-letter-in-javascript
+
+
+const getPokemon = async () => {
+    try{
+    const response = await fetch(`${API_URL}pokemon/`)
+    const data = await response.json()
+    setPokemon(data.results)
+    } catch (error) {
+        console.error("Error fetching Pokemon", error)
+        }   
+    }
 
     useEffect(() => {
-        const fetchPokemonData = async () => {
-          try {
-            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
-            const data = await response.json()
-            setPokemonData(data)
-          } catch (error) {
-            console.error('Error fetching Pokemon data:', error)
-          }
-        }
-        fetchPokemonData()
-    }, [pokemonName])
+        getPokemon()
+    }, [])
 
-    if (!pokemonData) {
-        return <div>Loading...</div>
-      }
-    
-    return (
+    return(
+    <section className="MainPokemons"> 
+        {pokemon?.slice(0,9).map((poke, index) => (
+            <Link key={index} to={`/pokemons/${poke.name}`}>
+                <h3>{capitalizeFirstLetter(poke.name)}</h3>
+            </Link>
+        ))}   
+    </section>
+    )
 
-        <>
-        <Header/>
-
-            <h1>{pokemonData.name}</h1>
-            <img className="pokemonImage" src={pokemonData.sprites.other.dream_world.front_default} alt={pokemonData.name} />
-
-            <article className="types">
-            <h2>TYPE(S)</h2>
-            <p>{pokemonData.types.map(type => type.type.name).join(', ')}</p>
-            </article>
-
-            <article className="stats">
-            <h2>STATS</h2>
-            {pokemonData.stats.map(stat => (
-                <p key={stat.stat.name}>{stat.stat.name}: {stat.base_stat}</p>
-            ))}
-            </article>
-
-            <article className="abilities">
-            <h2>ABILITIES</h2>
-            {pokemonData.abilities.map((ability, index) => (
-                <div key={ability.ability.name}>
-                    <h3>ABILITY {index + 1}</h3>
-                    <p>{ability.ability.name}</p>
-                </div>
-            ))}
-            </article>
-
-        </>
-    );
+  
 }
