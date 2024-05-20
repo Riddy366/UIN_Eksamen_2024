@@ -43,8 +43,8 @@ useEffect(() => {
     <>
       <h1>{type ? type.toUpperCase() : ''}</h1>
       <section className="pokemonList">
-        {pokemonType.map(poke => (
-          <article key={poke.id} className="pokemon">
+        {pokemonType.map((poke) => (
+          <article key={poke.id} className={`pokemon ${type}`}>
             <Link to={`/pokemons/${poke.name}`}>
               <img src={poke.image} alt={poke.name} />
               <div>

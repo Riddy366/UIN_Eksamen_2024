@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import "../styles/Type.css"
 import "../styles/Home.css"
 import { Link } from "react-router-dom"
 export default function TypeCard(){
@@ -28,13 +29,13 @@ const capitalizeFirstLetter = (string) => {
 
     return(
         <>
-        <section className="Types">        
-            {type?.slice(0,18).map((type, index) => (
-                <Link key={index} to={`/${type.name}`}>
-                    <h3>{capitalizeFirstLetter(type.name)}</h3>
+            <section className="Types">
+            {type?.slice(0, 18).map((type, index) => (
+                <Link key={index} to={`/${type.name}`} className={`type-card ${type.name}`}>
+                <h3>{capitalizeFirstLetter(type.name)}</h3>
                 </Link>
-            ))}  
-        </section>
+            ))}
+            </section>
         </>
     )
 }

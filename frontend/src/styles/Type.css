@@ -1,3 +1,43 @@
+:root {
+    --color-normal: #8b8b8b;
+    --color-fire: #EE8130;
+    --color-water: #6390F0;
+    --color-electric: #F7D02C;
+    --color-grass: #7AC74C;
+    --color-ice: #96D9D6;
+    --color-fighting: #91201c;
+    --color-poison: #A33EA1;
+    --color-ground: #856e36;
+    --color-flying: #7077ff;
+    --color-psychic: #F95587;
+    --color-bug: #A6B91A;
+    --color-rock: #5a5332;
+    --color-ghost: #735797;
+    --color-dragon: #6F35FC;
+    --color-dark: #3e2c21;
+    --color-steel: #9d9dd9;
+    --color-fairy: #D685AD;
+}
+
+.normal { background-color: var(--color-normal); }
+.fire { background-color: var(--color-fire); }
+.water { background-color: var(--color-water); }
+.electric { background-color: var(--color-electric); }
+.grass { background-color: var(--color-grass); }
+.ice { background-color: var(--color-ice); }
+.fighting { background-color: var(--color-fighting); }
+.poison { background-color: var(--color-poison); }
+.ground { background-color: var(--color-ground); }
+.flying { background-color: var(--color-flying); }
+.psychic { background-color: var(--color-psychic); }
+.bug { background-color: var(--color-bug); }
+.rock { background-color: var(--color-rock); }
+.ghost { background-color: var(--color-ghost); }
+.dragon { background-color: var(--color-dragon); }
+.dark { background-color: var(--color-dark); }
+.steel { background-color: var(--color-steel); }
+.fairy { background-color: var(--color-fairy); }
+
 .container {
     width: 90%;
     margin: 20px auto;
@@ -35,7 +75,7 @@ h1{
 }
 
 .pokemon:hover {
-    background-color: #f8bbd0; 
+    background-color: #b5b5b5; 
 }
 
 .pokemon img {
