@@ -90,3 +90,15 @@ h1{
     font-size: 14px; 
 }
 
+.type-content:hover {
+    background-color: #b5b5b5;
+}
+
+.Types a {
+    border-radius: 10px;
+}
+
+.type-content {
+    border-radius: 10px;
+}
+
