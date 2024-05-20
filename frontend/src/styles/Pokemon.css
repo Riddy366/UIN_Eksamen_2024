@@ -53,3 +53,14 @@ ul.stats li {
 .mainInfo h2{
     font-size: 2rem;
 }
+.abilities ul{
+    padding: 0;
+}
+.abilities li{
+    list-style-type: none;
+    font-weight: bold;
+    padding: 1rem 0rem 1rem 0rem;
+}
+.abilities ul.effects li {
+    font-weight: 300;
+  }

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Header from "./Header";
 import { Link } from "react-router-dom";
 
 
@@ -24,7 +23,6 @@ export default function SearchResults() {
 
     return (
         <>
-            <Header />
             <h1>RESULTATER</h1>
             <section className="search-results">
                 {searchResults.length > 0 ? (

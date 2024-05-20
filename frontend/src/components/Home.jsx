@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import Header from "./Header"
 import "../styles/Home.css"
 import { Link } from "react-router-dom"
 export default function Home(){
@@ -45,7 +44,6 @@ const getPokemon = async () => {
 
     return(
         <>
-        <Header/>
         <main>
             <h2>MAIN POKEMONS</h2>
             <section className="MainPokemons"> 
