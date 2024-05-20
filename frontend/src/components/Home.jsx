@@ -54,9 +54,9 @@ const getPokemon = async () => {
                     <h3>{capitalizeFirstLetter(poke.name)}</h3>
                 </Link>
             ))}   
-        </section> 
+        </section>
+        <h2>TYPES</h2> 
         <section className="Types">        
-            <h2>TYPES</h2>
             {type?.slice(0,18).map((type, index) => (
                 <Link key={index} to={`/${type.name}`}>
                     <h3>{capitalizeFirstLetter(type.name)}</h3>
