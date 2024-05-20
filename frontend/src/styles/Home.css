@@ -57,6 +57,11 @@ main h2 {
     justify-content: center;
     text-decoration: none;
     flex-direction: column;
+    border-radius: 10px;
+}
+
+.pokemon-info:hover {
+    background-color: #ccc;
 }
 
 .pokemon-info img {
