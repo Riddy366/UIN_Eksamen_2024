@@ -8,6 +8,12 @@ export default function Pokemon(){
     let { pokemonName } = useParams()
     let [pokemonData, setPokemonData] = useState(null)
 
+    const capitalizeFirstLetter = (string) => {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+      }
+      //https://codedamn.com/news/javascript/how-to-capitalize-first-letter-in-javascript
+    
+
     useEffect(() => {
         const fetchPokemonData = async () => {
           try {
@@ -28,25 +34,28 @@ export default function Pokemon(){
     return(
         <>
         <Header />
-    
-        <h2>{pokemonData.name}</h2>
-        <img className="pokemonIMG" src={pokemonData.sprites.other.dream_world.front_default} alt={pokemonData.name} />
-        <article className="stats">
+        <div className="container">
+        <section className="mainInfo">
+            <h2>{pokemonData.name.toUpperCase()}</h2>
+            <img className="pokemonIMG" src={pokemonData.sprites.other.dream_world.front_default} alt={pokemonData.name} />
+        </section>
+        <aside className="stats">
             <h2>{`TYPE(S)`}</h2>
                 <ul className="types">
                     {pokemonData.types.map((type, index) => (
-                    <li key={index}>{type.type.name}</li>
+                    <li key={index}>{capitalizeFirstLetter(type.type.name)}</li>
                     ))}
                 </ul>
             <h2>STATS</h2>
-                <ul className="Stats">
+                <ul className="stats">
                     {pokemonData.stats.map((stat, index) => (
-                    <li key={index}>
-                        {stat.stat.name}: {stat.base_stat}
+                    <li key={index} className="stat">
+                        <span className="statName">{stat.stat.name}</span>
+                        <span className="statValue">{stat.base_stat}</span>
                     </li>
                     ))}
                 </ul>
-        </article>
+        </aside>
         <article className="abilities">
             <h2>ABILITIES</h2>
                 <ul className="Abilites">
@@ -55,7 +64,7 @@ export default function Pokemon(){
                     ))}
                 </ul>
         </article>
-        
+        </div>
     
         </>
     )
