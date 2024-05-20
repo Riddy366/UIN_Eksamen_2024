@@ -57,6 +57,7 @@ const getPokemonDetails = async (pokemonUrl) => {
         <section className="pokemon-info">
           <img src={poke.image} alt={poke.name} />
           <h3>{capitalizeFirstLetter(poke.name)}</h3>
+          <h4>#00{poke.id}</h4>
         </section>
         </Link>
       ))}   
