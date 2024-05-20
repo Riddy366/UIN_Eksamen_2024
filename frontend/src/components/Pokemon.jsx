@@ -22,7 +22,7 @@ export default function Pokemon() {
     }
   }
 
-  //Fikk hjelp av Stine Vågnes (venn) med å få tak i beskrivelse til effektene
+  //Prøvde meg frem, men måtte å litt hjelp av en medstudent fra 3-året med å få tak i beskrivelse til effektene
   const fetchAbility = async (abilityName) => {
     try {
       const response = await fetch(`https://pokeapi.co/api/v2/ability/${abilityName}`)
