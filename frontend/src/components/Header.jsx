@@ -12,7 +12,7 @@ export default function Header(){
             src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
             alt="Pokeball Icon"
           />
-        </Link>
+            </Link>
                 <Link to="/"><h3>UIN POKEDEX</h3></Link>
                 <Link to="/teams"><h3>TEAMS</h3></Link>
             </menu>

@@ -5,6 +5,7 @@ header {
 }
 menu {
     display: flex;
+    align-items: center;
     padding: 0;
 }
 menu a {
@@ -12,9 +13,10 @@ menu a {
     text-decoration: none;
     color: black;
 }
+
 .pokeball{
-    float: right;
-    margin: 12px;
+   margin: 0;
+   float: right;
 }
 
 @media (max-width: 1024px) {
