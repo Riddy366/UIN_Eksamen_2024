@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/SearchBar.css";
+import searchIcon from "../assets/searchIcon.svg"
+
 
 export const SearchBar = () => {
     const [input, setInput] = useState("")
@@ -25,7 +27,7 @@ export const SearchBar = () => {
                     value={input} 
                     onChange={(e) => handleChange(e.target.value)}
                 />
-                <button type="submit">Search</button>
+                <img className="searchIcon" src={searchIcon} alt="searchIcon" onClick={handleSearch} />
             </form>
         </nav>
     )

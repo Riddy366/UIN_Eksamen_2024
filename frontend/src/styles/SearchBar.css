@@ -1,12 +1,21 @@
 input {
     width: 45rem;
-    height: 2.5rem;
+    height: 44px;
     background-color: transparent;
     font-size: 0.8rem;
-    border: 0.1rem solid grey;
-    
+    border: none;
+    text-indent: 10px;
 }
-
 input:focus {
     outline: none;
+}
+form{
+    display: flex;
+}
+.input-wrapper {
+    border: 1px solid grey;
+}
+.searchIcon {
+    width: 1.2rem;
+    padding-right: 20px;
 }
