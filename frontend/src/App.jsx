@@ -8,13 +8,14 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout'
 
+
 //Lagde routing
 function App() {
     return (
       <Layout>
         <Routes>
           <Route index element={<Home />} />
-            <Route path="pokemons/:pokemonName" element={<Pokemon />} />
+            <Route path="pokemons/:pokemonName" element={<Pokemo />} />
             <Route path="/:type" element={<Type />} />
             <Route path="teams" element={<Teams/>} />
             <Route path="searchresults/:query" element={<SearchResult />} />
