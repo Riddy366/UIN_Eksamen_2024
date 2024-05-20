@@ -23,7 +23,7 @@ import rockIcon from "../assets/types/rock.png";
 import steelIcon from "../assets/types/steel.png";
 import waterIcon from "../assets/types/water.png";
 
-// Mapper navn til ikontype navnet
+// Mapper navn til ikonet
 const typeIcons = {
   bug: bugIcon,
   dark: darkIcon,
