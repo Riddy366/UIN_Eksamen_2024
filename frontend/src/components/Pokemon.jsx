@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "../styles/Pokemon.css";
+import "../styles/colors.css";
 
 export default function Pokemon() {
   let { pokemonName } = useParams()
@@ -68,12 +69,16 @@ export default function Pokemon() {
     return <div>Loading...</div>
   }
 
+  const typeColor = pokemonData.types[0].type.name;
+
   return (
     <>
       <div className="container">
             <section className="mainInfo">
             <h2>{pokemonData.name.toUpperCase()}</h2>
+            <section className={`container ${typeColor}`}>
             <img className="pokemonIMG" src={pokemonData.sprites.other.dream_world.front_default} alt={pokemonData.name} />
+            </section>
             </section>
         <aside className="stats">
           <h2>{`TYPE(S)`}</h2>
