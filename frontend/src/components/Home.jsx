@@ -7,7 +7,7 @@ export default function Home(){
     return(
         <>
         <main>
-            <h2>MAIN POKEMONS</h2>
+            <h2 className="mainPokemonTitle">MAIN POKEMONS</h2>
             <PokeCard />
             <h2 className="typeTitle">TYPES</h2> 
             <TypeCard /> 

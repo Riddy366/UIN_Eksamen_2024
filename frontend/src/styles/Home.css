@@ -29,6 +29,9 @@ main h2 {
     width: 100%; 
     
 }
+.MainPokemonsTitle{
+    font-size: 3rem;
+}
 .typeTitle {
     font-size: 2.4rem;
 }
